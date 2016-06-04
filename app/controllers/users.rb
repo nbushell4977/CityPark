@@ -1,16 +1,38 @@
-# aka Register
+#new user form
 get '/users/new' do
-  erb :'users/new'
+  erb :"/users/new"
 end
 
-post '/users/new' do
-  @user = User.new(username: params[:username], password: params[:password])
-  if @user.save
+def create
+  @user = User.new(params[:user])
+  @user.password = params[:password]
+  @user.save!
+end
+
+# authenticates a user for login
+def login
+  @user = User.find_by_username(params[:username])
+  if !@user.nil? && @user.password == params[:password] 
     session[:id] = @user.id
-    redirect '/'
+    redirect "users/#{@user.id}"
   else
-    #error handling goes here
-    redirect '/users/new'
+    redirect '/sessions/login'
+  end
+end
+
+
+post '/users/login' do
+  login
+end
+
+post '/users' do
+  if create
+    session[:id] = @user.id
+    session[:visit] = 0
+    redirect "users/#{@user.id}"
+  else
+    @errors = @user.errors.full_messages
+    erb :'users/new'
   end
 end
 
@@ -19,3 +41,5 @@ get '/users/:id' do
   @user = User.find(params[:id])
   erb :'users/show'
 end
+
+
