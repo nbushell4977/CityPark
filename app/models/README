@@ -1,0 +1,13 @@
+Add your ActiveRecord models here.
+
+You can create them by being in the application root directory and running, e.g.,
+
+rake generate:model NAME=User
+
+
+if using a user.rb model, make sure to include:
+
+  include BCrypt
+  has_secure_password
+
+this will allow bcrypt to encrypt the password as it comes in from a form
