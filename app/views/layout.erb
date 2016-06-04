@@ -17,6 +17,19 @@
 
   <title></title>
 </head>
+<ul class="navbar-nav nav">
+           <li><a href="/">Home</a></li>
+           <% if logged_in %>
+             <li>
+               <a href="/sessions/<%= current_user.id %>">Logout</a>
+             </li>
+            <li>You are logged in as <%= current_user.username %></li>
+
+           <% else %>
+             <li><a href="/sessions/login">Login</a></li>
+             <li><a href="/users/new">Sign Up</a></li>
+           <% end %>
+         </ul>
 <body>
  <%= yield %>
 
