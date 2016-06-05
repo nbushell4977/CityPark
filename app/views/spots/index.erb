@@ -1,1 +1,9 @@
 <h1>Your Results:</h1>
+
+<ul>
+  <% @spots.each do |spot| %>
+    <li><%= spot.address %><br>
+    <%= spot.city%>, <%=spot.state %><br>
+    Posted by: <%= spot.user.username%> at <%= spot.created_at %></li>
+	<% end %>
+</ul>
