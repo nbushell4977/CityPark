@@ -1,0 +1,32 @@
+<h1>Edit Settings</h1>
+
+<form action='/users/<%=@user.id%>' method='POST' name='edit_settings_form'>
+	<input type='hidden' name='_method' value='PUT'>
+	<div>
+  <label for='username'>Username</label>
+	<input type='text' placeholder='Username' name='username' value='<%=@user.username%>'><br>
+	</div>
+
+	<div>
+  <label for='email'>E-mail</label>
+	<input type='email' placeholder='Email' name='email' value='<%=@user.email%>'><br>
+	</div>
+
+	<div>
+  <label for='phone'>Phone Number</label>
+	<input type='tel' placeholder='phone' name='phone' value='<%=@user.phone%>'><br>
+	</div>
+
+	<div>
+  <label for='description'>About You</label>
+	<input type='text' placeholder='description' name='description' value='<%=@user.description%>'><br>
+	</div>
+
+	<input type='submit' value='Edit'>
+
+</form>
+
+<form action="/users/<%=@user.id%>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="delete your account" class="user-delete"><br><br>
+</form>

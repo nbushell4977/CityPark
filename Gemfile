@@ -15,6 +15,7 @@ gem 'activerecord'
 
 gem 'rake'
 gem 'bcrypt'
+gem 'geocoder'
 
 gem 'pry-byebug'
 
