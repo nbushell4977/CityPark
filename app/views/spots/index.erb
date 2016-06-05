@@ -1,1 +1,7 @@
 <h1>Your Results:</h1>
+
+<ul>
+  <% @spots.each do |spot| %>
+    <li><%= spot.address %></li>
+	<% end %>
+</ul>
