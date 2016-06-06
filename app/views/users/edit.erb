@@ -2,31 +2,31 @@
 
 <form action='/users/<%=@user.id%>' method='POST' name='edit_settings_form'>
 	<input type='hidden' name='_method' value='PUT'>
-	<div>
+	<div class="form-group">
   <label for='username'>Username</label>
-	<input type='text' placeholder='Username' name='username' value='<%=@user.username%>'><br>
+	<input class="form-control" type='text' placeholder='Username' name='username' value='<%=@user.username%>'><br>
 	</div>
 
-	<div>
+	<div class="form-group">
   <label for='email'>E-mail</label>
-	<input type='email' placeholder='Email' name='email' value='<%=@user.email%>'><br>
+	<input class="form-control" type='email' placeholder='Email' name='email' value='<%=@user.email%>'><br>
 	</div>
 
-	<div>
+	<div class="form-group">
   <label for='phone'>Phone Number</label>
-	<input type='tel' placeholder='phone' name='phone' value='<%=@user.phone%>'><br>
+	<input class="form-control" type='tel' placeholder='phone' name='phone' value='<%=@user.phone%>'><br>
 	</div>
 
-	<div>
+	<div class="form-group">
   <label for='description'>About You</label>
-	<input type='text' placeholder='description' name='description' value='<%=@user.description%>'><br>
+	<input class="form-control" type='text' placeholder='description' name='description' value='<%=@user.description%>'><br>
 	</div>
 
-	<input type='submit' value='Edit'>
+	<input class="btn btn-primary" type='submit' value='Edit'>
 
-</form>
+</form><br><br>
 
 <form action="/users/<%=@user.id%>" method="post">
   <input type="hidden" name="_method" value="delete">
-  <input type="submit" value="delete your account" class="user-delete"><br><br>
+  <input class="btn btn-primary" type="submit" value="delete your account" class="user-delete"><br><br>
 </form>
