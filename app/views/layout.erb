@@ -10,6 +10,9 @@
   <!--
     application.css is where you put your styles
   -->
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap-theme.css">
+  <link rel="stylesheet" type="text/css" href="/css/normalize.css">
   <link rel="stylesheet" href="/css/application.css">
 
   <script async defer
@@ -20,6 +23,7 @@
 
   <title>CityPark</title>
 </head>
+<nav class="navbar navbar-light bg-faded">
 <ul class="navbar-nav nav">
            <li><a href="/">Home</a></li>
            <% if logged_in %>
@@ -35,13 +39,14 @@
              <li>
                <a href="/spots/new">Post a New Spot</a>
              </li>
-            <li>You are logged in as <%= current_user.username %></li>
+            <li id="login_status">You are logged in as <%= current_user.username %></li>
 
            <% else %>
              <li><a href="/sessions/login">Login</a></li>
              <li><a href="/users/new">Sign Up</a></li>
            <% end %>
          </ul>
+  </nav>
 <body>
  <%= yield %>
 
