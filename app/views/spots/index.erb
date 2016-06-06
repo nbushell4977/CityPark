@@ -1,15 +1,19 @@
 <h1>Your Results:</h1>
 
-<ul>
-  <% @spots.each do |spot| %>
-    <li><%= spot.address %><br>
-    <%= spot.city%>, <%=spot.state %><br>
-    Posted by: <%= spot.user.username%> at <%= spot.created_at %>
-    	<div id="latitude"><%=spot.latitude%></div>
-    	<div id="longitude"><%=spot.longitude%></div>
-    </li>
-	<% end %>
-</ul>
+<div class="col-lg-6" class="row-fluid">
+	<ul>
+	  <% @spots.each do |spot| %>
+	    <li><%= spot.address %><br>
+	    <%= spot.city%>, <%=spot.state %><br>
+	    Posted by: <%= spot.user.username%> at <%= spot.created_at %>
+	    	<div id="latitude"><%=spot.latitude%></div>
+	    	<div id="longitude"><%=spot.longitude%></div>
+	    </li>
+		<% end %>
+	</ul>
+</div>
 
-<div id="map"></div>
+<div class="col-lg-6">
+	<div id="map"></div>
+</div>
 
