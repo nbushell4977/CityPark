@@ -1,3 +1,5 @@
+require 'json'
+
 get '/spots/new' do 
   erb :'/spots/new'
 end
@@ -24,9 +26,22 @@ def address
 end
 
 post '/spots/results' do
-  @spots = ParkingSpot.near(address,10)
+  @spots = ParkingSpot.near(address,5)
   erb :'/spots/index'
 end
+
+# get '/spots/index' do
+#   @spots = ParkingSpot.near(address,5)
+#   spots_array = []
+#   @spots.each do |spot|
+#     content_type :json
+#     spots_array << spot.to_json
+#   end
+#   p spots_array
+#   p "*" * 100
+#   spots_array
+# end
+
 
 post '/spots' do
   user = User.find(session[:id])
