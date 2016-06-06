@@ -19,4 +19,9 @@
   right: 0px;
   width: 300px;
   padding: 10px;
+  font-family: cursive;
+}
+
+body {
+	font-family: "Lucida Sans Unicode";
 }
