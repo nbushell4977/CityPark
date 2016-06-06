@@ -9,5 +9,18 @@ function initMap() {
   setMarkers(map);
 };
 
-var parkingSpots = @spots.to_json;
-console.log(parkingSpots);
+// var parkingSpots = function() {
+//   document.getElementBy
+// }
+
+callAjax();
+
+function callAjax() {
+	$.ajax({
+	  url: '/spots/index',
+	  type: 'GET'
+		})
+		.done(function(data) {
+		  console.log(data);
+		})
+};

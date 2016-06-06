@@ -9,3 +9,7 @@
   width: 500px;
   height: 500px;
 }
+
+#latitude, #longitude {
+	visibility: hidden;
+}
