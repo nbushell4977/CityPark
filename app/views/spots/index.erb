@@ -3,7 +3,7 @@
 <div class="col-lg-6" class="row-fluid">
 	<ul id="search_results">
 	  <% @spots.each do |spot| %>
-	    <li><%= spot.address %><br>
+	    <li><a href="/spots/<%=spot.id%>"><%= spot.address %></a><br>
 	    <%= spot.city%>, <%=spot.state %><br>
 	    Posted by: <%= spot.user.username%> at <%= spot.created_at %>
 	    	<div class="latitude"><%=spot.latitude%></div>
