@@ -6,8 +6,8 @@
 	    <li><%= spot.address %><br>
 	    <%= spot.city%>, <%=spot.state %><br>
 	    Posted by: <%= spot.user.username%> at <%= spot.created_at %>
-	    	<div id="latitude"><%=spot.latitude%></div>
-	    	<div id="longitude"><%=spot.longitude%></div>
+	    	<div class="latitude"><%=spot.latitude%></div>
+	    	<div class="longitude"><%=spot.longitude%></div>
 	    </li>
 		<% end %>
 	</ul>

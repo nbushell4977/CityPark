@@ -10,7 +10,7 @@
   height: 500px;
 }
 
-#latitude, #longitude {
+.latitude, .longitude {
 	visibility: hidden;
 }
 
