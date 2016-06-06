@@ -5,3 +5,7 @@
   border: 1px dotted black;
 }
 
+#map {
+  width: 500px;
+  height: 500px;
+}
