@@ -25,3 +25,8 @@
 body {
 	font-family: "Lucida Sans Unicode";
 }
+
+#new_spot_form, #edit_settings_form, #new_user_form, #login_form {
+	margin: 20px auto;
+	padding: 0px 200px 20px 200px;
+}
