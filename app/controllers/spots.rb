@@ -42,6 +42,11 @@ end
 #   spots_array
 # end
 
+# get '/spots/index' do
+#   @spots = ParkingSpot.near(address,5)
+#   content_type :json
+#   @spots.to_json
+# end
 
 post '/spots' do
   user = User.find(session[:id])

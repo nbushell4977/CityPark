@@ -1,7 +1,7 @@
 <h1>Your Results:</h1>
 
 <div class="col-lg-6" class="row-fluid">
-	<ul>
+	<ul id="search_results">
 	  <% @spots.each do |spot| %>
 	    <li><%= spot.address %><br>
 	    <%= spot.city%>, <%=spot.state %><br>
