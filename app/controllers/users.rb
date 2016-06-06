@@ -64,6 +64,9 @@ put '/users/:id' do
   end
 end
 
+get '/users/:id/contact' do
+  erb :"/users/contact", layout: false
+end
 
 #delete user
 delete '/users/:id' do

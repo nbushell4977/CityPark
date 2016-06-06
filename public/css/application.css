@@ -10,7 +10,7 @@
   height: 500px;
 }
 
-.latitude, .longitude {
+.latitude, .longitude, .contact_user_id {
 	visibility: hidden;
 }
 
@@ -26,7 +26,7 @@ body {
 	font-family: "Lucida Sans Unicode";
 }
 
-#new_spot_form, #edit_settings_form, #new_user_form, #login_form {
+#new_spot_form, #edit_settings_form, #new_user_form, #login_form, #contact_user_form{
 	margin: 20px auto;
 	padding: 0px 200px 20px 200px;
 }

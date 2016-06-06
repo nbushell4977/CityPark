@@ -5,6 +5,7 @@
 	  <% @spots.each do |spot| %>
 	    <li><a href="/spots/<%=spot.id%>"><%= spot.address %></a><br>
 	    <%= spot.city%>, <%=spot.state %><br>
+	    Price: $<%=spot.price%>/month<br>
 	    Posted by: <%= spot.user.username%> at <%= spot.created_at %>
 	    	<div class="latitude"><%=spot.latitude%></div>
 	    	<div class="longitude"><%=spot.longitude%></div>

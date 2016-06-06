@@ -1,1 +1,23 @@
-<%= @spot.user_id %>
+
+<div class="col-lg-6" class="row-fluid">
+	<div id="search_results">
+		<li>
+		<h1><%= @spot.address %></h1>
+		<h1><%= @spot.city %>, <%= @spot.state %> </h1>
+		<div class="latitude"><%=@spot.latitude%></div>
+		<div class="longitude"><%=@spot.longitude%></div>
+		</li>
+	
+
+	<h2>Price: $<%=@spot.price%>/month</h2>
+	<p>Description: <%=@spot.description%></p>
+	<p>Posted by: <%=@spot.user.username%> at <%=@spot.created_at%></p>
+	<p> 
+	<div class="contact_user_id"><%= @spot.user.id%></div>
+	<a id="contact_user" href="/users/<%=@spot.user.id%>/contact">Contact <%=@spot.user.username%></a></p>
+</div>
+	</div>
+
+<div class="col-lg-6">
+	<div id="map"></div>
+</div>

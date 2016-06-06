@@ -15,23 +15,6 @@ function initMap() {
 
 parkingSpots = []
 
-// function getPinInfo(element) {
-// 		var lat = $(element).children(".latitude").text();
-// 		var long = $(element).children(".longitude").text();
-// 		var parsed_lat = parseFloat(lat);
-// 		var parsed_long = parseFloat(long);
-// 		parkingSpots.push([parsed_lat, parsed_long]);
-// };
-
-// function createMarkerArray() {
-// 	$("#search_results").each(function() {
-// 		$(this).find('li').each(function(){
-//       getPinInfo(this);
-// 		});
-// 	});
-// 	return parkingSpots;
-// };
-
 function getPinInfo(element) {
         var lat = $(element).children(".latitude").text();
         var long = $(element).children(".longitude").text();
@@ -62,3 +45,43 @@ function setMarkers(map) {
     });
   };
 };
+
+$(document).ready(function() {
+  eventListeners();
+});
+
+var eventListeners = function() {
+  showContactForm();
+};
+
+var showContactForm = function() {
+  $("#contact_user").on('click', function(e) {
+    e.preventDefault();
+    userId = $('#contact_user').siblings(".contact_user_id").text();
+    $.ajax({
+      url: "/users/"+userId+"/contact",
+      type: "GET"
+    })
+    .done(function(data) {
+      $("#search_results").append(data);
+    })
+  })
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
