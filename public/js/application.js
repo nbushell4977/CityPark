@@ -52,18 +52,36 @@ $(document).ready(function() {
 
 var eventListeners = function() {
   showContactForm();
+  sendMessageToPoster();
 };
 
 var showContactForm = function() {
   $("#contact_user").on('click', function(e) {
     e.preventDefault();
-    userId = $('#contact_user').siblings(".contact_user_id").text();
+    var userId = $('#contact_user').siblings(".contact_user_id").text();
     $.ajax({
       url: "/users/"+userId+"/contact",
       type: "GET"
     })
     .done(function(data) {
       $("#search_results").append(data);
+    });
+  });
+};
+
+var sendMessageToPoster = function() {
+  $(".contact_user_form").on('submit', function(e) {
+    e.preventDefault();
+    var data = $(this).serialize();
+    var userId = $('#contact_user').siblings(".contact_user_id").text();
+    $.ajax({
+      url: "/users/"+userId+"/contact",
+      type: "POST",
+      data: data
+    })
+    .done(function(data2) {
+      $("#search_results").append(data2);
+      $(".contact_user_form").hide();
     })
   })
 }

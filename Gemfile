@@ -25,3 +25,5 @@ gem 'faker'
 group :test do
   gem 'rspec'
 end
+
+gem 'pony'

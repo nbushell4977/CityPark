@@ -21,6 +21,7 @@ require "sinatra/reloader" if development?
 require 'erb'
 require 'faker'
 require 'bcrypt'
+require 'pony'
 require 'pry-byebug'
 
 # Some helper constants for path-centric logic

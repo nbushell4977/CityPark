@@ -4,8 +4,8 @@ get '/users/new' do
 end
 
 def create
-  @user = User.new(params[:user])
-  @user.password = params[:password]
+  @user = User.new(username: params[:username], email: params[:email], phone: params[:phone], description: params[:description], password: params[:password])
+  # @user.password = params[:password]
   @user.save!
 end
 
@@ -65,7 +65,14 @@ put '/users/:id' do
 end
 
 get '/users/:id/contact' do
+  @user = User.find(params[:id])
   erb :"/users/contact", layout: false
+end
+
+post '/users/:id/contact' do
+  @user = User.find(params[:id])
+  send_email({to: @user.email, from: params[:from], subject: params[:subject], body: params[:body]})
+  erb :"/users/_success-message"
 end
 
 #delete user
