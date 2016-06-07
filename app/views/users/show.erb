@@ -1,1 +1,13 @@
-"hey"
+<h1><%=@user.username%>'s Profile</h1>
+<h2>Below are <%=@user.username%>'s postings:</h2>
+	<% if @user.parking_spots == nil %>
+		<p>You haven't posted anything yet! :(</p>
+	<% else %>
+		<ol>
+		<% @user.parking_spots.each do |spot| %>
+			<li><a href="/spots/<%=spot.id%>"><%= spot.address %></a><br>
+			<%= spot.city %>, <%= spot.state %><br>
+			Posted on: <%= spot.created_at %> </li><br>
+		<% end %>
+		</ol>
+	<% end %>
