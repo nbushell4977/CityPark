@@ -1,30 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!--
-    normalize.css removes cross-browser differences in defaults, e.g.,
-    differences in how form elements appear between Firefox and IE
-    See: http://necolas.github.com/normalize.css/
-  -->
-  <link rel="stylesheet" href="/css/normalize.css">
-  <!--
-    application.css is where you put your styles
-  -->
-  <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
-  <link rel="stylesheet" type="text/css" href="/css/bootstrap-theme.css">
-  <link rel="stylesheet" type="text/css" href="/css/normalize.css">
-  <link rel="stylesheet" href="/css/application.css">
+<!--
+  normalize.css removes cross-browser differences in defaults, e.g.,
+  differences in how form elements appear between Firefox and IE
+  See: http://necolas.github.com/normalize.css/
+-->
+<link rel="stylesheet" href="/css/normalize.css">
+<!--
+  application.css is where you put your styles
+-->
+<link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="/css/bootstrap-theme.css">
+<link rel="stylesheet" type="text/css" href="/css/normalize.css">
+<link rel="stylesheet" href="/css/application.css">
 
-  <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['google_key']%>&callback=initMap">
-    </script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script src="/js/application.js"></script>
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['google_key']%>&callback=initMap">
+  </script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="/js/application.js"></script>
 
-  <title>CityPark</title>
+<title>CityPark</title>
 </head>
-<nav class="navbar navbar-light bg-faded">
-<ul class="navbar-nav nav">
+<body>
+<div class="container-fullwidth">
+  <nav class="navbar navbar-light bg-faded">
+  <ul class="navbar-nav nav">
            <li><a href="/">Home</a></li>
            <% if logged_in %>
              <li>
@@ -47,8 +49,8 @@
            <% end %>
          </ul>
   </nav>
-<body>
- <%= yield %>
+</div>
+<%= yield %>
 
 </body>
 </html>

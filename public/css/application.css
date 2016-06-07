@@ -36,7 +36,11 @@ body {
   background-image: url("https://static.pexels.com/photos/30732/pexels-photo-30732.jpg");
   color: white;
   font-family: "Lucida Sans Unicode";
+  padding-left: 20px;
+  padding-right: 20px;
 }
+
+
 
 li {
   color: black;
@@ -66,7 +70,9 @@ h1, h2, h3, p, ol, ul{
   color: #800080;
 }
 
-
+#map {
+  border: 5px groove white;
+}
 
 
 

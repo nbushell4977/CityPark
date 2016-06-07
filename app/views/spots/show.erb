@@ -1,42 +1,42 @@
 
 <div class="col-lg-6" class="row-fluid">
-<div class="show_posting_page">
-	<div id="search_results">
-		<div class="center-coordinates">
-			<div class="latitude"><%=@spot.latitude%></div>
-			<div class="longitude"><%=@spot.longitude%></div>
-		</div>	
-		<li id="hide_bullet_point">
-		<h1><%= @spot.address %></h1>
-		<h1><%= @spot.city %>, <%= @spot.state %> </h1>
-		<div class="latitude"><%=@spot.latitude%></div>
-		<div class="longitude"><%=@spot.longitude%></div>
-		</li>
-	
+	<div class="show_posting_page">
+		<div id="search_results">
+			<div class="center-coordinates">
+				<div class="latitude"><%=@spot.latitude%></div>
+				<div class="longitude"><%=@spot.longitude%></div>
+			</div>	
+			<li id="hide_bullet_point">
+				<h1><%= @spot.address %></h1>
+				<h1><%= @spot.city %>, <%= @spot.state %> </h1>
+				<div class="latitude"><%=@spot.latitude%></div>
+				<div class="longitude"><%=@spot.longitude%></div>
+			</li>
+			
 
-	<h2>Price: $<%=@spot.price%>/month</h2>
-	<p>Description: <%=@spot.description%></p>
-	<p>Posted by: <a id="show_pink_links" href="/users/<%=@spot.user.id%>"><%=@spot.user.username%></a> at <%=@spot.created_at%></p>
-	<p> 
-	<div class="contact_user_id"><%= @spot.user.id%></div>
-	<a id="contact_user" href="/users/<%=@spot.user.id%>/contact">Contact <%=@spot.user.username%></a></p>
-</div><br><br>
-	
-	<% if @spot.user.id == current_user.id %>
+			<h2>Price: $<%=@spot.price%>/month</h2>
+			<p>Description: <%=@spot.description%></p>
+			<p>Posted by: <a id="show_pink_links" href="/users/<%=@spot.user.id%>"><%=@spot.user.username%></a> at <%=@spot.created_at%></p>
+			<p> 
+				<div class="contact_user_id"><%= @spot.user.id%></div>
+				<a id="contact_user" href="/users/<%=@spot.user.id%>/contact">Contact <%=@spot.user.username%></a></p>
+			</div><br><br>
+			
+			<% if @spot.user.id == current_user.id %>
 			<a id="show_pink_links" href='/spots/edit/<%= @spot.id%>'>Edit this Posting</a><br>
 			<a id="show_pink_links" href='/users/show'>Delete this Posting</a><br><br>
-	<% end %>
+			<% end %>
 
-	</div>
-	<% if !@spot.nearbys.empty? %>
+		</div>
+		<% if !@spot.nearbys.empty? %>
 		Nearby Spots:
 		<ul>
 			<% @spot.nearbys.each do |nearby_spot| %>
-				<a id="show_pink_links" href="/spots/<%=nearby_spot.id%>"><%= nearby_spot.address %></a><br>
+			<a id="show_pink_links" href="/spots/<%=nearby_spot.id%>"><%= nearby_spot.address %></a><br>
 			<% end %>
 		</ul>
-	<% end %>
-</div>
-<div class="col-lg-6">
-	<div id="map"></div>
-</div>
+		<% end %>
+	</div>
+	<div class="col-lg-6">
+		<div id="map"></div>
+	</div>
