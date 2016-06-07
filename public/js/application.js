@@ -1,7 +1,7 @@
 function initMap() {
   // var myLatLng = {lat: 37.7576793, lng: -122.5076402};
 
-  var centerInfo = getPinInfo($("#search_results").first());
+  var centerInfo = getPinInfo($(".center-coordinates").first());
   if(isNaN(centerInfo[0]) || isNaN(centerInfo[1])){
     centerInfo = [37.773285, -122.445155];
   }
@@ -56,6 +56,7 @@ $(document).ready(function() {
 var eventListeners = function() {
   showContactForm();
   sendMessageToPoster();
+  changeCenter();
 };
 
 var showContactForm = function() {
@@ -87,10 +88,29 @@ var sendMessageToPoster = function() {
       $(".contact_user_form").hide();
     })
   })
-}
+};
 
 
+var changeCenter = function(){
+  $("#search_results li a").click(function (e) {
+    e.stopPropagation();
+  });
+  $("#search_results li").on("click", function(e){
+    e.preventDefault();
+    parkingSpots = []
+    getPinInfo(this)
+    var centerInfo = getPinInfo(this);
+    var myLatLng = {lat: centerInfo[0], lng: centerInfo[1]};
 
+
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 13,
+    center: myLatLng
+  });
+
+  setMarkers(map);
+  })
+};
 
 
 
