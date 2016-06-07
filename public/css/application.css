@@ -21,6 +21,7 @@
   width: 300px;
   padding: 10px;
   font-family: cursive;
+  font-size: 16px;
 }
 
 #new_spot_form, #edit_settings_form, #new_user_form, #login_form, #contact_user_form, #edit_posting_form{
@@ -71,7 +72,7 @@ h1, h2, h3, p, ol, ul{
 }
 
 #map {
-  border: 5px groove white;
+  border: 5px solid white;
 }
 
 
