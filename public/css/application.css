@@ -23,7 +23,7 @@
   font-family: cursive;
 }
 
-#new_spot_form, #edit_settings_form, #new_user_form, #login_form, #contact_user_form{
+#new_spot_form, #edit_settings_form, #new_user_form, #login_form, #contact_user_form, #edit_posting_form{
 	margin: 20px auto;
 	padding: 0px 200px 20px 200px;
 }

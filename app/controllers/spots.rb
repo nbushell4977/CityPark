@@ -47,3 +47,17 @@ get "/spots/:id" do
   @spot = ParkingSpot.find(params[:id])
   erb :"/spots/show"
 end
+
+get "/spots/:id/edit" do
+  @spot = ParkingSpot.find(params[:id])
+  erb :"/spots/edit"
+end
+
+
+
+
+
+
+
+
+

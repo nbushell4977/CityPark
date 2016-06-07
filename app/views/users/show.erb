@@ -6,8 +6,10 @@
 		<% else %>
 			<ol id="search_results">
 				<div class="center-coordinates">
-					<div class="latitude"><%=@user.parking_spots.first.latitude%></div>
-					<div class="longitude"><%=@user.parking_spots.first.longitude%></div>
+					<% if !@user.parking_spots == nil %>
+						<div class="latitude"><%=@user.parking_spots.first.latitude%></div>
+						<div class="longitude"><%=@user.parking_spots.first.longitude%></div>
+					<%end%>
 					</div>
 			<% @user.parking_spots.each do |spot| %>
 				<li>

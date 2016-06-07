@@ -20,13 +20,20 @@
 	<p> 
 	<div class="contact_user_id"><%= @spot.user.id%></div>
 	<a id="contact_user" href="/users/<%=@spot.user.id%>/contact">Contact <%=@spot.user.username%></a></p>
-</div>
+</div><br><br>
+	<div>
+		<% if @spot.user.id == current_user.id %>
+			<a href='/spots/<%@spot.id%>/edit'></a>
+			<a href='/users/show'></a>
+		<% end %>
+	</div>
+
 	</div>
 	<% if !@spot.nearbys.empty? %>
 		Nearby Spots:
 		<ul>
 			<% @spot.nearbys.each do |nearby_spot| %>
-				<a href="/spots/<%=nearby_spot.id%>"><%= nearby_spot.address %></a>
+				<a href="/spots/<%=nearby_spot.id%>"><%= nearby_spot.address %></a><br>
 			<% end %>
 		</ul>
 	<% end %>
