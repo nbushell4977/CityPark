@@ -1,5 +1,6 @@
 
 <div class="col-lg-6" class="row-fluid">
+<div class="show_posting_page">
 	<div id="search_results">
 		<li>
 		<h1><%= @spot.address %></h1>
@@ -17,7 +18,7 @@
 	<a id="contact_user" href="/users/<%=@spot.user.id%>/contact">Contact <%=@spot.user.username%></a></p>
 </div>
 	</div>
-
+</div>
 <div class="col-lg-6">
 	<div id="map"></div>
 </div>

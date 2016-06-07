@@ -30,3 +30,7 @@ body {
 	margin: 20px auto;
 	padding: 0px 200px 20px 200px;
 }
+
+#success_message {
+  color: green;
+}

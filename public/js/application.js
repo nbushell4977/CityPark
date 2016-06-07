@@ -70,7 +70,7 @@ var showContactForm = function() {
 };
 
 var sendMessageToPoster = function() {
-  $(".contact_user_form").on('submit', function(e) {
+  $("#search_results").on('submit', ".contact_user_form", function(e) {
     e.preventDefault();
     var data = $(this).serialize();
     var userId = $('#contact_user').siblings(".contact_user_id").text();

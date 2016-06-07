@@ -72,7 +72,7 @@ end
 post '/users/:id/contact' do
   @user = User.find(params[:id])
   send_email({to: @user.email, from: params[:from], subject: params[:subject], body: params[:body]})
-  erb :"/users/_success-message"
+  erb :"/users/_success-message", layout:false
 end
 
 #delete user
