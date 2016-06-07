@@ -2,6 +2,8 @@
 # See: http://gembundler.com/bundler_setup.html
 #      http://stackoverflow.com/questions/7243486/why-do-you-need-require-bundler-setup
 ENV['BUNDLE_GEMFILE'] ||= File.expand_path('../../Gemfile', __FILE__)
+ENV['google_key'] = "AIzaSyAowMFykTOHaxbnqVXozvtuRUmLOl7lsQ4"
+
 
 require 'bundler/setup' if File.exists?(ENV['BUNDLE_GEMFILE'])
 

@@ -1,4 +1,4 @@
- require 'geocoder'
+require 'geocoder'
 
 class ParkingSpot < ActiveRecord::Base
   extend Geocoder::Model::ActiveRecord
@@ -10,5 +10,14 @@ class ParkingSpot < ActiveRecord::Base
 
   def full_street_address
   	self.address + " "+ self.city + " " + self.state+" "+self.zip
+  end
+
+  def to_json
+  	{address: full_street_address, 
+  		latitude: latitute, 
+  		longitude: longitude,
+  		price: price,
+  		user: user.to_json,
+  		desciption: desciption}.to_json
   end
 end

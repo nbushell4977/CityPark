@@ -1,4 +1,5 @@
 require 'json'
+require 'geocoder'
 
 get '/spots/new' do 
   erb :'/spots/new'
@@ -26,6 +27,7 @@ def address
 end
 
 post '/spots/results' do
+  @center = Geocoder.search(address).first.coordinates
   @spots = ParkingSpot.near(address,5)
   erb :'/spots/index'
 end

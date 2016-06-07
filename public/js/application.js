@@ -1,7 +1,10 @@
 function initMap() {
   // var myLatLng = {lat: 37.7576793, lng: -122.5076402};
 
-  var centerInfo = getPinInfo($("#search_results").first().find('li').first());
+  var centerInfo = getPinInfo($("#search_results").first());
+  if(isNaN(centerInfo[0]) || isNaN(centerInfo[1])){
+    centerInfo = [37.7576793,-122.5076402];
+  }
   var myLatLng = {lat: centerInfo[0], lng: centerInfo[1]};
 
 
@@ -70,7 +73,7 @@ var showContactForm = function() {
 };
 
 var sendMessageToPoster = function() {
-  $("#search_results").on('submit', ".contact_user_form", function(e) {
+  $("#search_results").on("submit", ".contact_user_form", function(e) {
     e.preventDefault();
     var data = $(this).serialize();
     var userId = $('#contact_user').siblings(".contact_user_id").text();

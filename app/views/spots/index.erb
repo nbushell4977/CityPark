@@ -2,6 +2,8 @@
 
 <div class="col-lg-6" class="row-fluid">
 	<ul id="search_results">
+			<div class="latitude"><%=@center[0]%></div>
+			<div class="longitude"><%=@center[1]%></div>
 	  <% @spots.each do |spot| %>
 	    <li><p>
 		    <a href="/spots/<%=spot.id%>"><%= spot.address %></a><br>

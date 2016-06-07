@@ -12,6 +12,7 @@
 
 .latitude, .longitude, .contact_user_id {
 	visibility: hidden;
+  display: none;
 }
 
 #login_status {
