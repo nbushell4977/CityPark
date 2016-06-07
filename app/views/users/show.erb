@@ -10,9 +10,9 @@
 						<div class="longitude"><%=@user.parking_spots.first.longitude%></div>
 					</div>
 			<% @user.parking_spots.each do |spot| %>
-				<li>
+				<li id="show_white_list">
 					<p>
-					<a href="/spots/<%=spot.id%>"><%= spot.address %></a><br>
+					<a id="show_pink_links" href="/spots/<%=spot.id%>"><%= spot.address %></a><br>
 					<%= spot.city %>, <%= spot.state %><br>
 					Posted on: <%= spot.created_at %> 
 					<div class="latitude"><%=spot.latitude%></div>

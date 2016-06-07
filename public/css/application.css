@@ -49,3 +49,28 @@ h1, h2, h3, p, ol, ul{
 .navbar {
   background: white;
 }
+
+#show_white_list {
+  color: white;
+}
+
+#hide_bullet_point {
+  list-style: none;
+}
+
+#show_pink_links:link, #show_pink_links:visited, #contact_user {
+  color: #ffb3ff;
+}
+
+#show_pink_links:hover, #contact_user:hover {
+  color: #800080;
+}
+
+
+
+
+
+
+
+
+
