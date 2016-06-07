@@ -21,12 +21,11 @@
 	<div class="contact_user_id"><%= @spot.user.id%></div>
 	<a id="contact_user" href="/users/<%=@spot.user.id%>/contact">Contact <%=@spot.user.username%></a></p>
 </div><br><br>
-	<div>
-		<% if @spot.user.id == current_user.id %>
-			<a href='/spots/<%@spot.id%>/edit'></a>
-			<a href='/users/show'></a>
-		<% end %>
-	</div>
+	
+	<% if @spot.user.id == current_user.id %>
+			<a href='/spots/edit/<%= @spot.id%>'>Edit this Posting</a><br>
+			<a href='/users/show'>Delete this Posting</a><br><br>
+	<% end %>
 
 	</div>
 	<% if !@spot.nearbys.empty? %>

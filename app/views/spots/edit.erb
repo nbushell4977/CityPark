@@ -2,7 +2,7 @@
 
 <h1>Edit Settings</h1>
 
-<form action='/spots/<%=@spot.id%>' method='POST' name='edit_posting_form'>
+<form action='/spots/<%= @spot.id%>' method='POST' name='edit_posting_form'>
 	<input type='hidden' name='_method' value='PUT'>
 	<div class="form-group">
   <label for='address'>Address</label>

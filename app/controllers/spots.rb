@@ -48,7 +48,7 @@ get "/spots/:id" do
   erb :"/spots/show"
 end
 
-get "/spots/:id/edit" do
+get "/spots/edit/:id" do
   @spot = ParkingSpot.find(params[:id])
   erb :"/spots/edit"
 end
