@@ -12,6 +12,12 @@ class ParkingSpot < ActiveRecord::Base
   	self.address + " "+ self.city + " " + self.state+" "+self.zip
   end
 
+  def distance_from(location)
+    "%0.2f" % Geocoder::Calculations.distance_between(
+      [latitude,longitude], 
+      [location[0],location[1]])
+  end
+
   def to_json
   	{address: full_street_address, 
   		latitude: latitute, 

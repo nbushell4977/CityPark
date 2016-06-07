@@ -22,6 +22,14 @@
 	<a id="contact_user" href="/users/<%=@spot.user.id%>/contact">Contact <%=@spot.user.username%></a></p>
 </div>
 	</div>
+	<% if !@spot.nearbys.empty? %>
+		Nearby Spots:
+		<ul>
+			<% @spot.nearbys.each do |nearby_spot| %>
+				<a href="/spots/<%=nearby_spot.id%>"><%= nearby_spot.address %></a>
+			<% end %>
+		</ul>
+	<% end %>
 </div>
 <div class="col-lg-6">
 	<div id="map"></div>

@@ -4,12 +4,16 @@
 	<ul id="search_results">
 			<div class="latitude"><%=@center[0]%></div>
 			<div class="longitude"><%=@center[1]%></div>
+		<% if @spots.empty? %>
+			<p>There are no parking spots in this area yet :(</p>
+		<% end %>
 	  <% @spots.each do |spot| %>
 	    <li><p>
 		    <a href="/spots/<%=spot.id%>"><%= spot.address %></a><br>
 		    <%= spot.city%>, <%=spot.state %><br>
 		    Price: $<%=spot.price%>/month<br>
 		    Posted by: <a href="/users/<%=spot.user.id%>"><%= spot.user.username%></a> at <%= spot.created_at %>
+		    	<%= spot.distance_from(@center) %>mi away
 		    	<div class="latitude"><%=spot.latitude%></div>
 		    	<div class="longitude"><%=spot.longitude%></div>
 	    </p></li>

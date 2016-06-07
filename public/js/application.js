@@ -3,13 +3,13 @@ function initMap() {
 
   var centerInfo = getPinInfo($("#search_results").first());
   if(isNaN(centerInfo[0]) || isNaN(centerInfo[1])){
-    centerInfo = [37.7576793,-122.5076402];
+    centerInfo = [37.773285, -122.445155];
   }
   var myLatLng = {lat: centerInfo[0], lng: centerInfo[1]};
 
 
   var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 10,
+    zoom: 13,
     center: myLatLng
   });
 
