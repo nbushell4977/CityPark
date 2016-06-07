@@ -8,7 +8,7 @@ function initMap() {
   var myLatLng = {lat: centerInfo[0], lng: centerInfo[1]};
 
 
-  var map = new google.maps.Map(document.getElementById('map'), {
+  map = new google.maps.Map(document.getElementById('map'), {
     zoom: 13,
     center: myLatLng
   });
@@ -16,6 +16,7 @@ function initMap() {
   setMarkers(map);
 };
 
+var map;
 parkingSpots = []
 
 function getPinInfo(element) {
@@ -100,15 +101,10 @@ var changeCenter = function(){
     parkingSpots = []
     getPinInfo(this)
     var centerInfo = getPinInfo(this);
-    var myLatLng = {lat: centerInfo[0], lng: centerInfo[1]};
+    var center = {lat: centerInfo[0], lng: centerInfo[1]};
 
 
-  var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 13,
-    center: myLatLng
-  });
-
-  setMarkers(map);
+    map.panTo(center);
   })
 };
 
