@@ -73,6 +73,7 @@ h1, h2, h3, p, ol, ul{
 
 #map {
   border: 5px solid white;
+  box-shadow: 5px 5px 5px #ffffcc;
 }
 
 
