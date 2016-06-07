@@ -7,11 +7,13 @@
 			<ol id="search_results">
 			<% @user.parking_spots.each do |spot| %>
 				<li>
+					<p>
 					<a href="/spots/<%=spot.id%>"><%= spot.address %></a><br>
 					<%= spot.city %>, <%= spot.state %><br>
 					Posted on: <%= spot.created_at %> 
 					<div class="latitude"><%=spot.latitude%></div>
 		    	<div class="longitude"><%=spot.longitude%></div>
+		    	</p>
 				</li>
 			<% end %>
 			</ol>
