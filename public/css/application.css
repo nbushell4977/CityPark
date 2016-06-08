@@ -22,6 +22,7 @@
   padding: 10px;
   font-family: cursive;
   font-size: 16px;
+  font-weight: bold;
 }
 
 #new_spot_form, #edit_settings_form, #new_user_form, #login_form, #contact_user_form, #edit_posting_form{
@@ -31,32 +32,47 @@
 
 #success_message {
   color: green;
+  font-weight: bold;
 }
 
 body {
-  background-image: url("https://static.pexels.com/photos/30732/pexels-photo-30732.jpg");
-  color: white;
+ /* background-image: url("https://static.pexels.com/photos/30732/pexels-photo-30732.jpg");*/
+  background-image: url("https://static.pexels.com/photos/1139/black-and-white-city-skyline-buildings.jpg");
+  color: #001a4d;
   font-family: "Lucida Sans Unicode";
+  font-weight: bold;
+}
+
+body::after {
+  opacity: 0.5;
+}
+
+#padding_text {
   padding-left: 20px;
   padding-right: 20px;
 }
 
-
+#current_user_link {
+  padding: 0px;
+  display: inline;
+}
 
 li {
   color: black;
 }
 
 h1, h2, h3, p, ol, ul{
-  color: white;
+  color: #001a4d;
+  font-weight: bold;
 }
 
 .navbar {
-  background: white;
+  background: #b3b3b3;
 }
 
 #show_white_list {
-  color: white;
+  color: #001a4d;
+  font-weight: bold;
 }
 
 #hide_bullet_point {
@@ -64,20 +80,19 @@ h1, h2, h3, p, ol, ul{
 }
 
 #show_pink_links:link, #show_pink_links:visited, #contact_user {
-  color: #ffb3ff;
+  color: #0099ff;
+  font-weight: bold;
 }
 
 #show_pink_links:hover, #contact_user:hover {
-  color: #800080;
+  color: #663d00;
+  font-weight: bold;
 }
 
 #map {
-  border: 5px solid white;
-  box-shadow: 5px 5px 5px #ffffcc;
+  border: 5px solid #ffb366;
+  box-shadow: 5px 5px 5px #001a4d;
 }
-
-
-
 
 
 

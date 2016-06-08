@@ -41,7 +41,7 @@
              <li>
                <a href="/spots/new">Post a New Spot</a>
              </li>
-            <li id="login_status">You are logged in as <a href="/users/<%=current_user.id%>"><%= current_user.username %></a></li>
+            <li id="login_status">You are logged in as <a id="current_user_link" href="/users/<%=current_user.id%>"><%= current_user.username %></a></li>
 
            <% else %>
              <li><a href="/sessions/login">Login</a></li>
@@ -50,7 +50,8 @@
          </ul>
   </nav>
 </div>
+<div id="padding_text">
 <%= yield %>
-
+</div>
 </body>
 </html>
