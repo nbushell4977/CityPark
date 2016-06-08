@@ -1,6 +1,6 @@
 <div id="contact_user_form">
 
-<form class="contact_user_form" action='/users/<%= @user.id %>/contact' method="POST", name="contact_user_form">
+<form class="contact_user_form white-background"  action='/users/<%= @user.id %>/contact' method="POST", name="contact_user_form">
 	<div class="form-group">
 		<label for="from">Your E-Mail Address</label>
 		<input name="from" class="form-control" type='text' placeholder="Your e-mail address"></input>
@@ -13,7 +13,7 @@
 
 	<div class="form-group">
 		<label for="body">Body</label>
-		<input name="body" class="form-control" type='textarea' placeholder="Body"></input>
+		<input name="body" class="form-control" rows="4" cols="50" type='textarea' placeholder="Body"></input>
 	</div>
 
 	<input class="btn btn-primary" type='submit' value='Contact!'>

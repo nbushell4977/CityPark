@@ -80,7 +80,7 @@ h1, h2, h3, p, ol, ul{
 }
 
 #show_pink_links:link, #show_pink_links:visited, #contact_user {
-  color: #0099ff;
+  color: #007acc;
   font-weight: bold;
 }
 
@@ -92,8 +92,16 @@ h1, h2, h3, p, ol, ul{
 #map {
   border: 5px solid #ffb366;
   box-shadow: 5px 5px 5px #001a4d;
+  position: fixed;
 }
 
 
+.white-background {
+  background: rgba(255, 255, 255, 0.6);
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+
+}
 
 
