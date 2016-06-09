@@ -1,6 +1,6 @@
 function initMap() {
   // var myLatLng = {lat: 37.7576793, lng: -122.5076402};
-  bounds = new google.maps.LatLngBounds();
+  var bounds = new google.maps.LatLngBounds();
   var centerInfo = getPinInfo($(".center-coordinates").first());
   if(isNaN(centerInfo[0]) || isNaN(centerInfo[1])){
     centerInfo = [37.773285, -122.445155];
@@ -13,13 +13,12 @@ function initMap() {
     center: myLatLng
   });
 
-  setMarkers(map);
+  setMarkers(map, bounds);
   if(parkingSpots.length > 0){
     map.fitBounds(bounds);
   }
 };
 
-var bounds;
 var map;
 parkingSpots = []
 
@@ -41,9 +40,8 @@ function createMarkerArray() {
     return parkingSpots;
 };
 
-function setMarkers(map) {
+function setMarkers(map, bounds) {
   createMarkerArray();
-   console.log(parkingSpots)
   for (var i = 0; i < parkingSpots.length; i++) {
     var spot = parkingSpots[i];
     var marker = new google.maps.Marker({
@@ -98,39 +96,38 @@ var sendMessageToPoster = function() {
 };
 
 var pan = function(element){
-    parkingSpots = []
     var centerInfo = getPinInfo(element);
     var center = {lat: centerInfo[0], lng: centerInfo[1]};
     map.panTo(center);
 }
 
-var highlightMarker = function(element){
-    var marker = setMarker(element)
-    var icon = new google.maps.Icon({
-      anchor:marker.getPosition(),
-      url:'http://maps.google.com/intl/en_us/mapfiles/ms/micons/purple.png',
-      scaledSize: 10
-    })
-    marker.setIcon(icon);
-    return marker;
-};
+// var highlightMarker = function(element){
+//     var marker = setMarker(element)
+//     var icon = new google.maps.Icon({
+//       anchor:marker.getPosition(),
+//       url:'http://maps.google.com/intl/en_us/mapfiles/ms/micons/purple.png',
+//       scaledSize: 10
+//     })
+//     marker.setIcon(icon);
+//     return marker;
+// };
 
-var highlightMarker = function(element){
-    var marker = setMarker(element)
-    marker.setIcon('http://steeplemedia.com/images/markers/markerGreen.png');
-    return marker;
-};
+// var resetMarker = function(element){
+//     var marker = setMarker(element)
+//     marker.setIcon();
+//     return marker;
+// };
 
-var setMarker = function(element){
-  var centerInfo = getPinInfo(element);
-  var location = {lat: centerInfo[0], lng: centerInfo[1]};
-  var marker = new google.maps.Marker({
-      position: location,
-      map: map,
-      title: "spot",
-    });
-    return marker;
-};
+// var setMarker = function(element){
+//   var centerInfo = getPinInfo(element);
+//   var location = {lat: centerInfo[0], lng: centerInfo[1]};
+//   var marker = new google.maps.Marker({
+//       position: location,
+//       map: map,
+//       title: "spot",
+//     });
+//     return marker;
+// };
 
 
 var changeCenter = function(){
@@ -140,7 +137,7 @@ var changeCenter = function(){
   $("#search_results li").on("click", function(e){
     e.preventDefault();
     pan(this);
-    console.log(map.getZoom())
+
     if(map.getZoom()<13){
       map.setZoom(13);
     }
@@ -154,7 +151,7 @@ var highLightSelected = function(){
     function () {
       color = $(this).css('background-color');
       $(this).css('background-color','rgba(224, 224, 126, 0.6)')
-      marker = highlightMarker(this);
+      //marker = highlightMarker(this);
     },
     function(){
       $(this).css('background-color',color)
