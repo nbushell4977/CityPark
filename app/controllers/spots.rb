@@ -27,9 +27,14 @@ def address
 end
 
 post '/spots/results' do
-  @center = Geocoder.search(address).first.coordinates
-  @spots = ParkingSpot.near(address,5)
-  erb :'/spots/index'
+  if @center 
+    @center = Geocoder.search(address).first.coordinates
+    @spots = ParkingSpot.near(address,5)
+    erb :'/spots/index'
+  else
+    session[:error] = "This adderss does not exist. Please try again."
+    redirect "/"
+  end
 end
 
 post '/spots' do
