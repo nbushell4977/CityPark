@@ -15,12 +15,16 @@ function initMap() {
 
   setMarkers(map, bounds);
   if(parkingSpots.length > 0){
-    map.fitBounds(bounds);
+    // map.fitBounds(bounds);
+    if(map.getZoom()>13){
+      map.setZoom(13);
+    }
   }
 };
 
 var map;
 parkingSpots = []
+
 
 function getPinInfo(element) {
         var lat = $(element).children(".latitude").text();
