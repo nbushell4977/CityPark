@@ -53,7 +53,11 @@ get "/spots/edit/:id" do
   erb :"/spots/edit"
 end
 
-
+get '/spots/delete/:id' do
+  spot = ParkingSpot.find(params[:id]);
+  spot.destroy
+  redirect "/users/#{current_user.id}"
+end
 
 
 

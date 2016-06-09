@@ -24,7 +24,7 @@
 			
 			<% if @spot.user.id == current_user.id %>
 			<a id="show_pink_links" href='/spots/edit/<%= @spot.id%>'>Edit this Posting</a><br>
-			<a id="show_pink_links" href='/users/show'>Delete this Posting</a><br><br>
+			<a id="show_pink_links" href='/spots/delete/<%= @spot.id%>'>Delete this Posting</a><br><br>
 			<% end %>
 
 		</div>
