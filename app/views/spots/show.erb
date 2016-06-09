@@ -16,7 +16,7 @@
 
 			<h2>Price: $<%=@spot.price%>/month</h2>
 			<p>Description: <%=@spot.description%></p>
-			<p>Posted by: <a id="show_pink_links" href="/users/<%=@spot.user.id%>"><%=@spot.user.username%></a> at <%=@spot.created_at%></p>
+			<p>Posted by: <a id="show_pink_links" href="/users/<%=@spot.user.id%>"><%=@spot.user.username%></a> on <%=@spot.created_at%></p>
 			<p> 
 				<div class="contact_user_id"><%= @spot.user.id%></div>
 				<a id="contact_user" href="/users/<%=@spot.user.id%>/contact">Contact <%=@spot.user.username%></a></p>

@@ -14,7 +14,7 @@
 			<a id="show_pink_links" href="/spots/<%=spot.id%>"><%= spot.address %></a><br>
 			<%= spot.city%>, <%=spot.state %><br>
 			Price: $<%=spot.price%>/month<br>
-			Posted by: <a id="show_pink_links" href="/users/<%=spot.user.id%>"><%= spot.user.username%></a> at <%= spot.created_at %><br>
+			Posted by: <a id="show_pink_links" href="/users/<%=spot.user.id%>"><%= spot.user.username%></a> on <%= spot.created_at %><br>
 			<%= spot.distance_from(@center) %>mi away
 			<div class="latitude"><%=spot.latitude%></div>
 			<div class="longitude"><%=spot.longitude%></div>
