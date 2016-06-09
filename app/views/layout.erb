@@ -44,10 +44,8 @@ src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['google_key']%>&callbac
        <li>
         <div class="col-sm-3 col-md-3 pull-right">
           <form class="navbar-form navbar-left" action="/users/search" method="POST" role="search">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Search for user" name="search">
-            </div>
-            <button class="btn btn-primary" type="submit"><span></span>Search</button>
+              <input type="text" class="search rounded form-control" placeholder="Search for user" name="search">
+           
           </form>
         </li>
         <li id="login_status">You are logged in as <a id="current_user_link" href="/users/<%=current_user.id%>"><%= current_user.username %></a></li>
@@ -59,6 +57,12 @@ src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['google_key']%>&callbac
       </ul>
     </nav>
   </div>
+<div class='error'>
+  <% if session[:error] %>
+    <%= session[:error] %>
+    <% session[:error] = nil %>
+  <% end %>
+</div>
   <div id="padding_text">
     <%= yield %>
   </div>

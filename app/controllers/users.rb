@@ -47,6 +47,7 @@ post '/users/search' do
   if @user
     redirect "/users/#{@user.id}"
   else
+    session[:error] = "This user does not exist. Please enter a user's username or e-mail address."
     redirect '/'
   end
 end

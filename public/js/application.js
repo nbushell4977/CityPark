@@ -14,12 +14,14 @@ function initMap() {
   });
 
   setMarkers(map, bounds);
-  if(parkingSpots.length > 0){
-    // map.fitBounds(bounds);
-    if(map.getZoom()>13){
-      map.setZoom(13);
-    }
-  }
+  if(parkingSpots.length > 0){
+    map.fitBounds(bounds);
+    console.log(map.getZoom())
+   var listener = google.maps.event.addListener(map, "idle", function() { 
+  if (map.getZoom() > 13) map.setZoom(13); 
+  google.maps.event.removeListener(listener); 
+});
+  }
 };
 
 var map;
