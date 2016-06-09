@@ -42,6 +42,15 @@ get '/users/:id' do
   erb :'users/show'
 end
 
+post '/users/search' do
+  @user = User.find_by_email(params[:search]) || User.find_by_username(params[:search])
+  if @user
+    redirect "/users/#{@user.id}"
+  else
+    redirect '/'
+  end
+end
+
 # get edit page
 get '/users/:id/edit' do
   @user = User.find(params[:id])
