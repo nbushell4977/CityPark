@@ -1,1 +1,30 @@
-"hey"
+
+<div class="col-lg-6 white-background" class="row-fluid">
+	<h1><%=@user.username%>'s Profile</h1>
+	<h2>Below are <%=@user.username%>'s postings:</h2>
+		<% if @user.parking_spots == nil %>
+			<p>You haven't posted anything yet! :(</p>
+		<% else %>
+			<ol id="search_results">
+				<div class="center-coordinates">
+						<div class="latitude"><%=@user.parking_spots.first.latitude unless @user.parking_spots.empty?%></div>
+						<div class="longitude"><%=@user.parking_spots.first.longitude unless @user.parking_spots.empty?%></div>
+					</div>
+			<% @user.parking_spots.each do |spot| %>
+				<li id="show_white_list">
+					<p>
+					<a id="show_pink_links" href="/spots/<%=spot.id%>"><%= spot.address %></a><br>
+					<%= spot.city %>, <%= spot.state %><br>
+					Posted on: <%= spot.created_at %> 
+					<div class="latitude"><%=spot.latitude%></div>
+		    	<div class="longitude"><%=spot.longitude%></div>
+		    	</p>
+				</li>
+			<% end %>
+			</ol>
+		<% end %>
+</div>
+
+<div class="col-lg-6">
+	<div id="map"></div>
+</div>

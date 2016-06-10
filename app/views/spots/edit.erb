@@ -1,0 +1,48 @@
+
+<div id="edit_posting_form" class="white-background">
+
+<h1>Edit Settings</h1>
+
+<form action='/spots/<%= @spot.id%>' method='POST' name='edit_posting_form'>
+	<input type='hidden' name='_method' value='PUT'>
+	<div class="form-group">
+  <label for='address'>Address</label>
+	<input class="form-control" type='text' placeholder='Address' name='address' value='<%=@spot.address%>'><br>
+	</div>
+
+	<div class="form-group">
+  <label for='unit'>Unit</label>
+	<input class="form-control" type='text' placeholder='Unit' name='unit' value='<%=@spot.unit%>'><br>
+	</div>
+
+	<div class="form-group">
+  <label for='city'>City</label>
+	<input class="form-control" type='text' placeholder='City' name='city' value='<%=@spot.city%>'><br>
+	</div>
+
+	<div class="form-group">
+  <label for='state'>State</label>
+	<input class="form-control" type='text' placeholder='State' name='state' value='<%=@spot.state%>'><br>
+	</div>
+
+	<div class="form-group">
+  <label for='zip'>Zip Code</label>
+	<input class="form-control" type='text' placeholder='Zip' name='zip' value='<%=@spot.zip%>'><br>
+	</div>
+
+	<div class="form-group">
+  <label for='price'>Price</label>
+	<input class="form-control" type='text' placeholder='Price' name='price' value='<%=@spot.price%>'><br>
+	</div>
+
+	<div class="form-group">
+  <label for='description'>Description</label>
+	<input class="form-control" type='textarea' placeholder='Description' name='description' value='<%=@spot.description%>'><br>
+	</div>
+
+	<input class="btn btn-primary" type='submit' value='Edit'>
+
+</form><br><br>
+
+
+</div>

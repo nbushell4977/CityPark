@@ -4,8 +4,8 @@ get '/users/new' do
 end
 
 def create
-  @user = User.new(params[:user])
-  @user.password = params[:password]
+  @user = User.new(username: params[:username], email: params[:email], phone: params[:phone], description: params[:description], password: params[:password])
+  # @user.password = params[:password]
   @user.save!
 end
 
@@ -42,6 +42,16 @@ get '/users/:id' do
   erb :'users/show'
 end
 
+post '/users/search' do
+  @user = User.find_by_email(params[:search]) || User.find_by_username(params[:search])
+  if @user
+    redirect "/users/#{@user.id}"
+  else
+    session[:error] = "This user does not exist. Please enter a user's username or e-mail address."
+    redirect '/'
+  end
+end
+
 # get edit page
 get '/users/:id/edit' do
   @user = User.find(params[:id])
@@ -64,6 +74,16 @@ put '/users/:id' do
   end
 end
 
+get '/users/:id/contact' do
+  @user = User.find(params[:id])
+  erb :"/users/contact", layout: false
+end
+
+post '/users/:id/contact' do
+  @user = User.find(params[:id])
+  send_email({to: @user.email, from: params[:from], subject: params[:subject], body: params[:body]})
+  erb :"/users/_success-message", layout: false
+end
 
 #delete user
 delete '/users/:id' do

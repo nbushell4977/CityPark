@@ -21,7 +21,10 @@ gem 'pry-byebug'
 
 gem 'shotgun'
 gem 'faker'
+gem 'dotenv'
 
 group :test do
   gem 'rspec'
 end
+
+gem 'pony'

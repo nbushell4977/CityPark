@@ -10,8 +10,9 @@
   height: 500px;
 }
 
-#latitude, #longitude {
+.latitude, .longitude, .contact_user_id {
 	visibility: hidden;
+  display: none;
 }
 
 #login_status {
@@ -20,13 +21,128 @@
   width: 300px;
   padding: 10px;
   font-family: cursive;
+  font-size: 16px;
+  font-weight: bold;
 }
 
-body {
-	font-family: "Lucida Sans Unicode";
-}
-
-#new_spot_form, #edit_settings_form, #new_user_form, #login_form {
+#new_spot_form, #edit_settings_form, #new_user_form, #login_form, #contact_user_form, #edit_posting_form{
 	margin: 20px auto;
 	padding: 0px 200px 20px 200px;
 }
+
+#success_message {
+  color: green;
+  font-weight: bold;
+}
+
+body {
+ /* background-image: url("https://static.pexels.com/photos/30732/pexels-photo-30732.jpg");*/
+  background-image: url("https://static.pexels.com/photos/1139/black-and-white-city-skyline-buildings.jpg");
+  color: #001a4d;
+  font-family: "Lucida Sans Unicode";
+  font-weight: bold;
+}
+
+body::after {
+  opacity: 0.5;
+}
+
+#padding_text {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+#current_user_link {
+  padding: 0px;
+  display: inline;
+}
+
+li {
+  color: black;
+}
+
+h1, h2, h3, p, ol, ul{
+  color: #001a4d;
+  font-weight: bold;
+}
+
+.navbar {
+  background: #b3b3b3;
+}
+
+#show_white_list {
+  color: #001a4d;
+  font-weight: bold;
+}
+
+#hide_bullet_point {
+  list-style: none;
+}
+
+#show_pink_links:link, #show_pink_links:visited, #contact_user {
+  color: #007acc;
+  font-weight: bold;
+}
+
+#show_pink_links:hover, #contact_user:hover {
+  color: #663d00;
+  font-weight: bold;
+}
+
+#map {
+  border: 5px solid #ffb366;
+  box-shadow: 5px 5px 5px #001a4d;
+  position: fixed;
+}
+
+
+.white-background {
+  background: rgba(255, 255, 255, 0.6);
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.navbar-form {
+  display: inline;
+  position: absolute;
+}
+
+.search { 
+  padding:6px 15px 6px 30px;
+  margin:3px; 
+  background: url('http://findicons.com/files/icons/1389/g5_system/32/toolbar_find.png') no-repeat;
+  background-color: white; 
+}
+
+.rounded { 
+  border-radius:15px; 
+  -moz-border-radius:15px; 
+  -webkit-border-radius:15px; 
+}
+
+.search_btn, .search_btn:hover {
+  position:relative; 
+  left:-6px;
+  border:1px solid #adc5cf;
+  background: #e4f1f9; /* Old browsers */
+  background: -moz-linear-gradient(top, #e4f1f9 0%, #d5e7f3 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e4f1f9), color-stop(100%,#d5e7f3)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #e4f1f9 0%,#d5e7f3 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #e4f1f9 0%,#d5e7f3 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #e4f1f9 0%,#d5e7f3 100%); /* IE10+ */
+  background: linear-gradient(top, #e4f1f9 0%,#d5e7f3 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e4f1f9', endColorstr='#d5e7f3',GradientType=0 ); /* IE6-9 */
+  color:#7da2aa;
+  cursor: pointer;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+  padding-left: 30%;
+}
+
+
+
+
+

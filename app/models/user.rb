@@ -14,4 +14,11 @@ class User < ActiveRecord::Base
     @password = Password.create(new_password)
     self.password_hash = @password
   end  
+
+  def to_json
+    {email: email,
+      username: username,
+      phone: phone,
+      description: description}.to_json
+  end
 end

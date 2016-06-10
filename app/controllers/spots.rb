@@ -1,4 +1,5 @@
 require 'json'
+require 'geocoder'
 
 get '/spots/new' do 
   erb :'/spots/new'
@@ -26,22 +27,15 @@ def address
 end
 
 post '/spots/results' do
-  @spots = ParkingSpot.near(address,5)
-  erb :'/spots/index'
+  if address == "" || address == ", ,  "
+    session[:error] = "This address does not exist. Please try again."
+    redirect "/"
+  else
+    @center = Geocoder.search(address).first.coordinates
+    @spots = ParkingSpot.near(address,5)
+    erb :'/spots/index'
+  end
 end
-
-# get '/spots/index' do
-#   @spots = ParkingSpot.near(address,5)
-#   spots_array = []
-#   @spots.each do |spot|
-#     content_type :json
-#     spots_array << spot.to_json
-#   end
-#   p spots_array
-#   p "*" * 100
-#   spots_array
-# end
-
 
 post '/spots' do
   user = User.find(session[:id])
@@ -58,3 +52,21 @@ get "/spots/:id" do
   @spot = ParkingSpot.find(params[:id])
   erb :"/spots/show"
 end
+
+get "/spots/edit/:id" do
+  @spot = ParkingSpot.find(params[:id])
+  erb :"/spots/edit"
+end
+
+get '/spots/delete/:id' do
+  spot = ParkingSpot.find(params[:id]);
+  spot.destroy
+  redirect "/users/#{current_user.id}"
+end
+
+
+
+
+
+
+
