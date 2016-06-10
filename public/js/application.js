@@ -1,4 +1,8 @@
 function initMap() {
+
+  $(document).ready(function() {
+  eventListeners();
+});
   // var myLatLng = {lat: 37.7576793, lng: -122.5076402};
   var bounds = new google.maps.LatLngBounds();
   var centerInfo = getPinInfo($(".center-coordinates").first());
@@ -59,9 +63,6 @@ function setMarkers(map, bounds) {
   };
 };
 
-$(document).ready(function() {
-  eventListeners();
-});
 
 var eventListeners = function() {
   showContactForm();
